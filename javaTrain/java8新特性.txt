@@ -1,0 +1,23 @@
+1. 接口的默认方法
+   java 8 允许给接口添加一个非抽象的方法实现，只需要使用default关键字。这个特征又叫做扩展方法，也叫默认方法
+	interface Formula {
+    		double calculate(int a);
+    		default double sqrt(int a) {
+     		   return Math.sqrt(a);
+    		}
+	}
+
+2. lambda 表达式
+----------------------------------------java8 以前的排序
+	Collections.sort(lists, new Comparator<String>() {   	
+   	    public int compare(String a, String b) {
+       		 return b.compareTo(a);
+   	    }
+	});
+----------------------------------------lambda
+	Collections.sort(lists, (a, b) -> b.compareTo(a));
+	
+   每一个lambda对应一个接口类型，该函数式接口只包含一个抽象方法。默认方法不算抽象方法，所以可以给函数式接口添加默认方法，但是无法用lambda访问。
+    @FunctionalInterface 注解，检查是否多于一个抽象方法
+	
+

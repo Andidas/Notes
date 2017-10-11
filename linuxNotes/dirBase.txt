@@ -1,0 +1,38 @@
+1. 使用ll或者ls –l命令来显示一个文件的属性以及文件所属的用户和组
+
+2. 在Linux中第一个字符代表这个文件是目录、文件或链接文件等
+  	当为[ d ]则是目录
+	当为[ - ]则是文件；
+	若是[ l ]则表示为链接文档(link file)；
+	若是[ b ]则表示为装置文件里面的可供储存的接口设备(可随机存取装置)；
+	若是[ c ]则表示为装置文件里面的串行端口设备，例如键盘、鼠标(一次性读取装置)
+3. chgrp：更改文件属组
+4. chown：更改文件属主，也可以同时更改文件属组
+5. chmod：更改文件9个属性 : 
+   5.1数字类型改变文件权限
+	r:4	
+	w:2
+	x:1
+   每种身份(owner/group/others)各自的三个权限(r/w/x)分数是需要累加的，例如当权限为   [-rwxrwx---] 分数则是：
+	owner = rwx = 4+2+1 = 7
+	group = rwx = 4+2+1 = 7
+	others= --- = 0+0+0 = 0
+
+   eg: # chmod [-R] xyz 文件或目录:
+	xyz : 就是刚刚提到的数字类型的权限属性，为 rwx 属性数值的相加。
+	-R : 进行递归(recursive)的持续变更，亦即连同次目录下的所有文件都会变更
+    
+   5.2 符号类型改变文件权限
+ 	(1)user (2)group (3)others = (1)u (2)g (3)o
+	a 则代表 all 亦即全部的身份,读写的权限就可以写成r, w, x
+   
+   eg:  [root@www ~]# ls -al .bashrc
+	-rwxr-xr-x  1 root root 395 Jul  4 11:45 .bashrc
+	[root@www ~]# chmod  a+w  .bashrc
+	[root@www ~]# ls -al .bashrc
+	-rwxrwxrwx  1 root root 395 Jul  4 11:45 .bashrc
+
+	[root@www ~]# chmod  a-x  .bashrc
+	[root@www ~]# ls -al .bashrc
+	-rw-rw-rw-  1 root root 395 Jul  4 11:45 .bashrc
+      

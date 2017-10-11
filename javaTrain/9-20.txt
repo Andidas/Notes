@@ -1,0 +1,18 @@
+53. Thread
+    获得线程名Thread.currentThread().getName()
+
+54. Runnable
+    实现这个接口的，可以共享资源
+
+    setPriority()设置优先级
+
+55. synchronized关键字，同步，只能锁引用变量
+
+56. .wait() 进程进入等待，并释放共享资源
+    .notify() .notifyAll() 通知（所有）等待状态的线程，继续执行
+    
+    wait和sleep的区别：
+    wait是Object的方法，sleep是Thread的方法，
+    wait会释放同步锁，sleep不会
+ 
+    A.join() 线程合并，A先执行结束在执行本来的线程

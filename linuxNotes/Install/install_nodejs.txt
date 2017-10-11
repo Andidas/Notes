@@ -1,0 +1,17 @@
+1,安装依赖包
+yum install gcc-c++ openssl-devel
+如果失败，在安装一次，gcc -v 查看是否成功，在尾行可以看到gcc version 4.4.7 20120313(Red Hat 4.4.7-11)(GCC)
+
+2.python的版本要在2.6以上，python -version | python 查看，
+
+3.安装最新的node.js
+	cd /usr/local/src
+	wget http://nodejs.org/dist/node-latest.tar.gz
+	tar -zxvf node-latest.tar.gz
+
+  进行编译安装
+	cd node-v0.12.7
+	./configure
+	make && make install
+
+  检查是否成功 node -v

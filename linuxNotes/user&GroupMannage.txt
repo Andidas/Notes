@@ -1,0 +1,105 @@
+1. 添加新的用户账号   
+   useradd 选项 用户名
+
+	-c comment 指定一段注释性描述。
+	-d 目录 指定用户主目录，如果此目录不存在，则同时使用-m选项，可以创建主目录。
+	-g 用户组 指定用户所属的用户组。
+	-G 用户组，用户组 指定用户所属的附加组。
+	-s Shell文件 指定用户的登录Shell。
+	-u 用户号 指定用户的用户号，如果同时有-o选项，则可以重复使用其他用户的标识号。
+   eg:	# useradd –d /home/lwy -m lwy
+
+        # useradd -s /bin/sh -g group –G adm,root gem
+
+此命令新建了一个用户gem，该用户的登录Shell是 /bin/sh，它属于group用户组，同时又属于adm和root用户组，其中group用户组是其主组。
+这里可能新建组：#groupadd group及groupadd adm
+增加用户账号就是在/etc/passwd文件中为新用户增加一条记录，同时更新其他系统文件如/etc/shadow, /etc/group等。
+Linux提供了集成的系统管理工具userconf，它可以用来对用户账号进行统一管理。
+
+2. 删除帐号
+   userdel 选项 用户名
+
+	-r，它的作用是把用户的主目录一起删除。
+
+3. 修改帐号
+   usermod 选项 用户名
+
+	常用的选项包括-c, -d, -m, -g, -G, -s, -u以及-o等，这些选项的意义与useradd命令中的选项一样
+	-l 新用户名
+
+	# usermod -s /bin/ksh -d /home/z –g developer sam
+	此命令将用户sam的登录Shell修改为ksh，主目录改为/home/z，用户组改为developer。
+
+4. 用户口令的管理
+   用户账号刚创建时没有口令，但是被系统锁定，无法使用，必须为其指定口令后才可以使用，即使是指定空口令。
+
+	passwd 选项 用户名
+	
+	-l 锁定口令，即禁用账号。
+	-u 口令解锁。
+	-d 使账号无口令。
+	-f 强迫用户下次登录时修改口令。
+
+   假设当前用户是sam，则下面的命令修改该用户自己的口令：
+	$ passwd 
+   如果是超级用户，可以用下列形式指定任何用户的口令：
+	# passwd sam 
+
+5. 添加组
+	groupadd 选项 用户组
+
+	g GID 指定新用户组的组标识号（GID）。
+	-o 一般与-g选项同时使用，表示新用户组的GID可以与系统已有用户组的GID相同。
+	
+   # groupadd -g 101 group2
+   此命令向系统中增加了一个新组group2，同时指定新组的组标识号是101。
+
+6. 删除组
+	groupdel 用户组
+
+7. 修改组
+	groupmod 选项 用户组
+	
+	-g GID 为用户组指定新的组标识号。
+	-o 与-g选项同时使用，用户组的新GID可以与系统已有用户组的GID相同。
+	-n新用户组 将用户组的名字改为新名字
+
+   # groupmod –g 10000 -n group3 group2
+   此命令将组group2的标识号改为10000，组名修改为group3。
+
+8. 如果一个用户同时属于多个用户组，那么用户可以在用户组之间切换，以便具有其他用户组的权限。
+   	$ newgrp root
+	这条命令将当前用户切换到root用户组，前提条件是root用户组确实是该用户的主组或附加组。类似于用户账号的管理，用户组的管理也可以通过集成的系统管理工具来完成
+
+9. 添加批量用户
+
+添加和删除用户对每位Linux系统管理员都是轻而易举的事，比较棘手的是如果要添加几十个、上百个甚至上千个用户时，我们不太可能还使用useradd一个一个地添加，必然要找一种简便的创建大量用户的方法。Linux系统提供了创建大量用户的工具，可以让您立即创建大量用户，方法如下：
+（1）先编辑一个文本用户文件。
+每一列按照/etc/passwd密码文件的格式书写，要注意每个用户的用户名、UID、宿主目录都不可以相同，其中密码栏可以留做空白或输入x号。一个范例文件user.txt内容如下：
+user001::600:100:user:/home/user001:/bin/bash
+user002::601:100:user:/home/user002:/bin/bash
+user003::602:100:user:/home/user003:/bin/bash
+user004::603:100:user:/home/user004:/bin/bash
+user005::604:100:user:/home/user005:/bin/bash
+user006::605:100:user:/home/user006:/bin/bash
+（2）以root身份执行命令 /usr/sbin/newusers，从刚创建的用户文件user.txt中导入数据，创建用户：
+# newusers < user.txt
+然后可以执行命令 vipw 或 vi /etc/passwd 检查 /etc/passwd 文件是否已经出现这些用户的数据，并且用户的宿主目录是否已经创建。
+（3）执行命令/usr/sbin/pwunconv。
+将 /etc/shadow 产生的 shadow 密码解码，然后回写到 /etc/passwd 中，并将/etc/shadow的shadow密码栏删掉。这是为了方便下一步的密码转换工作，即先取消 shadow password 功能。
+# pwunconv
+（4）编辑每个用户的密码对照文件。
+范例文件 passwd.txt 内容如下：
+user001:密码
+user002:密码
+user003:密码
+user004:密码
+user005:密码
+user006:密码
+（5）以root身份执行命令 /usr/sbin/chpasswd。
+创建用户密码，chpasswd 会将经过 /usr/bin/passwd 命令编码过的密码写入 /etc/passwd 的密码栏。
+# chpasswd < passwd.txt
+（6）确定密码经编码写入/etc/passwd的密码栏后。
+执行命令 /usr/sbin/pwconv 将密码编码为 shadow password，并将结果写入 /etc/shadow。
+# pwconv
+这样就完成了大量用户的创建了，之后您可以到/home下检查这些用户宿主目录的权限设置是否都正确，并登录验证用户密码是否正确。 

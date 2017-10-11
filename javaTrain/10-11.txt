@@ -1,0 +1,9 @@
+57. html5 标签,
+	<input type="email|url|number|range|date|color|search"/> 会有校验
+	<header><nav><footer><aside><section><article> 类似div，方便确认，便于浏览器seo的优化
+
+    localStore将数据存储在客户端本地
+
+58. html5 缓存
+	<html manifest="demo.appcache">
+	需要在对应文件夹下新建缓存文件demo.appcache

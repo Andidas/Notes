@@ -1,0 +1,13 @@
+编写java程序，把中文插入数据库的时候乱码，解决方案
+
+找到MySQL的安装目录，一般在c盘
+
+找到my.ini文件
+
+找到 default-character-set 修改成
+	default-character-set=utf8
+
+还有 character-set-server 修改成
+	character-set-server=utf8
+
+保存之后，重新启动MySQL服务器，服务器在管理里面

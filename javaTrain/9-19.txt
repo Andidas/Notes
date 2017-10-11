@@ -1,0 +1,28 @@
+47. 二进制流：DataOutPut(In)Stream,ObjectOut（In）PutStream（序列化）
+
+48. 文件流：File，FileOut(In)PutStream，FileReader，FileWriter
+
+49. 数据库之间的关系：
+	线性关系：一对一
+	树形关系：一对多
+	图形结构：多对多
+
+50. 数据库中的数据类型，
+	char 固定长度，不够的由空格补全
+	varchar 以内容长度存储
+	nchar，nvarchar，适用存储中文（双字节），支持Unicode，
+	date：YYYY-MM-DD
+	datetime：YYYY-MM-DD HH：MM：SS
+
+51. 约束定义；
+	not null：非空约束
+	unique：唯一约束
+	primary key：主键约束
+	foreign key...外键约束
+
+52. 按年龄排序
+	select *,2017-birth age from student order by 2017-birth desc;
+    前n条数据
+	select * from student limit 3;
+    第n条数据往后m条数据，不包括第n条数据
+	select * from student limit 3,1;

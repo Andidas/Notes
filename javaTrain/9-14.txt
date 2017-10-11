@@ -1,0 +1,53 @@
+22. 封装：隐藏细节，提高代码的安全性，使代码模块化
+    继承：代码重用
+    多态：同意函数，多种形态，灵活扩展开发程序
+
+23.半抽象：abstract
+    抽象类不能实例化，只能继承
+    抽象方法不能实现
+    抽象类不一定有抽象方法，有抽象方法的一定是抽象类
+    抽象类的派生子类如果没有提供抽象类所有抽象方法的具体实现，那么该子类也必须是抽象类
+    构造方法和静态方法不能被修饰为abstract
+    
+24.全抽象：interface（jdk1.8之后不是全抽象）
+    接口只能有抽象方法，只能public abstract修饰
+    接口里面的属性只能public static final 修饰，只能是公开的常量
+    接口可以多继承，类单继承多实现
+
+25. 重点：接口是对行为的抽象，实现接口的类可以不是同一类事物。抽象类是事物本身的抽象，继承抽象类必须是同一类事物
+
+26. final 实质是引用不可变  (String类是final类)
+    修饰变量，变为常量，禁用修改
+    修饰方法，使其无法覆盖，禁用多态
+    修饰类，禁用继承
+
+27. 对于通过new产生一个字符串（假设为”china”）时，会先去常量池中查找是否已经有了”china”对象，如果没有则在常量池中创建一个此字符串对象，然后堆中再创建一个常量池中此”china”对象的拷贝对象。
+这也就是有道面试题：String s = new String(“xyz”);产生几个对象？答：一个或两个，如果常量池中原来没有”xyz”,就是两个
+
+28. String str = "aaa"          // 在常量池
+    String str2 = "aaabbb"     // 在常量池
+    String str3 = str + "bbb" //new StringBuilder(str).append("bbb").toString() 相当于new String("aaabbb")在堆里面
+    str3 == str2            //  false
+
+29. 少用继承，多用组合
+
+
+30. 静态内部类，无法访问外部非静态的属性，构造方法私有化后，外部无法访问
+    非静态内部类，少用
+    匿名内部类，常用，实现抽象类
+
+31. 异常，预先准备，避免程序因错误而"终止"
+    exception的四个直接子类
+    SQLException ,数据库异常
+    ClassNotFoundException，找不到类，反射异常
+    IOException ， 流异常（文件操作或网络异常）
+    RuntimeException，能被JVM做优化处理的运行期异常，有以下五个：
+	NullPointException，空指针异常
+	NumberFormateException，数据格式异常
+	ArithmeticException，算数异常
+	ArrayIndexOutOfBoundsException，数据越界异常
+	ClassCastException，强制转换异常
+
+32. finally 无论是否出现异常，都会执行，只有System.exit(0)能够终止
+    finally中无法改变try区域的返回变量值（try里头有return，finally没有）
+    

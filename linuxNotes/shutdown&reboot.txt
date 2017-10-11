@@ -1,0 +1,34 @@
+sync 将数据由内存同步到硬盘中。
+
+shutdown 关机指令，你可以man shutdown 来看一下帮助文档。例如你可以运行如下命令关机：
+
+shutdown –h 10 ‘This server will shutdown after 10 mins’ 这个命令告诉大家，计算机将在10分钟后关机，并且会显示在登陆用户的当前屏幕中。
+
+Shutdown –h now 立马关机
+
+Shutdown –h 20:25 系统会在今天20:25关机
+
+Shutdown –h +10 十分钟后关机
+
+Shutdown –r now 系统立马重启
+
+Shutdown –r +10 系统十分钟后重启
+
+reboot 就是重启，等同于 shutdown –r now
+
+halt 关闭系统，等同于shutdown –h now 和 poweroff
+
+___________________________________________
+
+最后总结一下，不管是重启系统还是关闭系统，首先要运行 sync 命令，把内存中的数据写到磁盘中。
+关机的命令有 shutdown –h now halt poweroff 和 init 0 , 重启系统的命令有 shutdown –r now reboot init 6。
+
+--------------------------------------------------------------
+Linux系统有7个运行级别(runlevel):
+运行级别0：系统停机状态，系统默认运行级别不能设为0，否则不能正常启动(init 0)
+运行级别1：单用户工作状态，root权限，用于系统维护，禁止远程登陆(init 1)
+运行级别2：多用户状态(没有NFS)(init 2)
+运行级别3：完全的多用户状态(有NFS)，登陆后进入控制台命令行模式(init 3)
+运行级别4：系统未使用，保留(init 4)
+运行级别5：X11控制台，登陆后进入图形GUI模式(init 5)
+运行级别6：系统正常关闭并重启，默认运行级别不能设为6，否则不能正常启动(init 6)

@@ -1,0 +1,26 @@
+1. 使用yum查找提供此功能的的软件包：
+	 # yum provides /usr/sbin/semanage
+   或者
+	 # yum whatprovides /usr/sbin/semanage
+
+2. 查找结果如下：
+policycoreutils-python-2.5-8.el7.x86_64 : SELinux policy core python utilities
+Repo        : base
+Matched from:
+Filename    : /usr/sbin/semanage
+
+
+policycoreutils-python-2.5-9.el7.x86_64 : SELinux policy core python utilities
+Repo        : updates
+Matched from:
+Filename    : /usr/sbin/semanage
+
+
+policycoreutils-python-2.5-11.el7_3.x86_64 : SELinux policy core python utilities
+Repo        : updates
+Matched from:
+Filename    : /usr/sbin/semanage
+
+3. 安装policycoreutils-python软件包：
+	# yum -y install policycoreutils-python
+

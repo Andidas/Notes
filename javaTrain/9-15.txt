@@ -1,0 +1,44 @@
+33. java.lang.*
+	原始数据类型		包装类
+	boolean			Boolean
+	byte			Byte
+	char			Character
+	short			Short
+	int			Integer
+	long			Long
+	float 			Float
+	double			Double
+
+34. 自动装箱，自动拆箱
+
+35. 常量池中（Integer包装类）不能放超过-128~127的数据
+
+36. “==”对于引用类型比较的是对象地址是否相同
+
+37. 局部变量的引用都在java栈里面
+
+38. String
+	String.replace("a","b")所有的a被b取代
+	String.split("a"),按照a分割成若干个字符串
+	String.toCharArray();转成字符数组
+	String.intern()用于拆包
+
+    效率：StringBuilder>StringBuffer>String
+
+39. 获得0~100的随机数
+	int res = (int)((Math.Random())*101)
+
+40. GMT+08:00 
+	GMT(Greenwich Mean Time)是格林尼治标准时间,+08:00 指标准时间加8小时,也就是北京时间.
+
+41.                            iterator
+  				  |
+	    ---------------------------------------------	
+	   |						 |
+	collection                                      map
+	   |
+    ---------------------		
+    |			|
+   set                list                   
+
+     

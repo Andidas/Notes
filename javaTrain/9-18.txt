@@ -1,0 +1,9 @@
+42. 添加元素效率 ArrayList < LinkedList
+
+43. Set无序集合，逻辑上无序，元素不可重复，需要排序使用
+
+44. TreeSet 按照内容排序，不能排序的东西放不下，需要先实现排序接口，排序接口Comparator（外部接口） 或者 Comparable（内部接口）
+
+45. Collection 是父接口，Collections是工具类
+
+46. transient关键字，临时的，用于反序列化

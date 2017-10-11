@@ -1,0 +1,11 @@
+.tar.gz 格式解压为 tar -zxvf xx.tar.gz 
+			tar -zxvf xx.tar.gz -C /bin	解压到bin目录
+.tar.bz2 格式解压为 tar -jxvf xx.tar.bz2
+.tar.xz的解压方法： 
+	xz -d mpfr-3.1.2.tar.xz 	
+	会产生一个mpfr-3.1.2.tar 文件，再执行 
+	tar -xvf mpfr-3.1.2.tar
+.tar.lz的解压方法：lzip -d file.lz 
+	下载： http://www.nongnu.org/lzip/ 
+	       http://download.savannah.gnu.org/releases/lzip/
+

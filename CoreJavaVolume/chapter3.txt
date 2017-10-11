@@ -1,0 +1,48 @@
+1、 byte      1字节  -128~127
+   short     2字节 -32768~32767
+   int       4字节 -2147 483 648~2147 483 647 
+   long      8字节 -2^32到2^32-1
+   float     4字节
+   double    8字节
+   char 	(A 65 a 97) Unicode \u0000 ~ \uffff     
+   boolean
+    	
+
+2、 十六机制前缀0x， 八进制0， 二进制0b
+
+3、 十六进制表示浮点数 eg：0.125 = 0x1.0p-3
+	p表示指数，而不是e。尾数采用十六进制，指数采用十进制。指数的基数是2，而不是10
+
+4、 Double.POSITIVE_INFINITY 正无穷大 
+   Double.NEGATIVE_INFINITY 负无穷大
+   Double.NaN	（不是一个数字） 
+	if(Double.isNaN) //check whether x is "not a number"
+   关键字 strictfp,将使用严格的浮点计算
+
+5、 整数除0会异常，浮点数除0会得到无穷大或NaN
+
+6、 + - * / % & | ^ ~ %% || != == <= >= >> << x?y:z 
+
+7、 n + f
+	如果两个操作数有一个是double，另一个就会转换为double
+			      float		      float
+			      long		      long
+	否则两个都转为int
+
+8、 String.substring(x,y) 提取出子串
+   equals是否相等，equalsIgnoreCase忽略大小写
+   if(str != null && str.length() != 0)首先检查str不为null，在null值上调用方法，会出错
+	toLowerCase()变小写   toUpperCase()变大写
+
+9、 System.out.printf("hello %s. Next year, you`ll be %d",name,age);
+    用于printf的转换符
+	d	十进制				s	字符串
+	x	十六进制			c	字符
+	o	八进制				b	布尔
+	f	定点浮点数	15.9		h	散列码		42628b2
+	e	指定浮点数	1.59e+01	tx	日期时间
+	g	通用浮点数			%	百分号
+	a	十六进制浮点数 	0x1.fccdp3	n	与平台有关的行分隔符 
+    用于printf的标志：略
+    日期和时间的转换符号：略
+	

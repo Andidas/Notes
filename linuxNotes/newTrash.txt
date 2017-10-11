@@ -1,0 +1,27 @@
+linux下的回收站在每一个当前用户目录./local/share/Trash中。
+
+也可以给linux添加一个回收站。
+
+mkdir /tmp/trash_tmp 建立一个回收站目录
+
+vi /bin/trash 编辑一个文件
+
+mv $@ /tmp/trash_tmp
+
+:wq 保存退出
+
+alias rm=/bin/trash添加别名
+
+vi /etc/bashrc
+
+在最后一行添加alias rm=/bin/trash
+
+chmod 755 /bin/trash
+
+chmod 777 /tmp/trash_tmp
+
+source /etc/bashrc 启用环境变量
+
+如果要真的删除某个文件的时候用 /bin/rm -i file_name
+
+这样一来一个回收站就建立了，以后用rm的时候会自动的将file_name 移动到/tmp/trash_tmp/目录下

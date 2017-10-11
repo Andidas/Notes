@@ -1,0 +1,27 @@
+1. 后缀586,386，是32位系统
+
+2. 1990初，詹姆斯-高斯林（James Gosling）开发java语言的雏形，最初命名为Oak，
+   1995年5月正式命名为java，---sun公司
+
+3. c++ 缺点，跨平台
+
+4. JDK -- Java Develop Kit ， JRE -- Java Runtime Environment
+   JVM -- Java Virtual Machine
+
+5. 生成java文档API，在cmd里面输入 
+   javadoc HelloWorld.java -d doc
+
+6. 十进制转为二进制：27=（27/2=13...1 13/2=6...1 6/2=3...0 3/2=1...1 1/2=0...1）=11011
+
+7. 计算机三种码：原码，补码（最常用），反码
+
+8. 八种数据类型：2^16 = 32768, 2^17 - 1 = 65535(\uFFFF)	boolean1<byte8<short16<char16<int32<float32<double64<long64
+
+9. 集合特性：不固定大小，不固定类型。
+
+10. byte = 8bit  -128~127   1000 0000 ~ 0111 1111
+char 大小为2个字节，范围，0~65535 采用unicode编码，攘括了ASCII码
+short 大小为2个字节，范围， -32768~32767
+
+11. switch里面default不一定要放在最下方，defalut如果不在最下方也需要break，switch的后跟括号只能包括int,char,short,byte,enum
+

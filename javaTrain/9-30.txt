@@ -1,0 +1,7 @@
+57. <meta name = "keywords">,用于搜索时候的关键字
+
+58. html 最大的有点是嵌套
+
+59. <marquee direction="right"> 走马灯
+
+60. 锚点，a标签对应的是name，其他标签对应的是id
