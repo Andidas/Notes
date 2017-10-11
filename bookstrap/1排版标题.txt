@@ -1,0 +1,21 @@
+1. 注意引入先后顺序，应该先引入jquery在引入bootstrap 否则console会报错
+
+2. 标题
+	h1:36px h2:30px h3:24px h2:18px h1；12px 
+   副标题
+   	small
+
+3. p标签：
+	默认：14px 行高：20px 底部外边距：10px
+
+4. 排版
+	大小写
+	.text-lowercase .text-uppercase  .text-capitalize(首字母大写)
+ 	对齐
+	.text-left  .text-center  .text-right
+
+5. 表格
+	.table-bordered带边框表格  .table-striped条纹状表格  .table-hover 悬停变色  .table-condensed 紧凑风格
+
+6. 响应式开发meta标签中的Viewport
+	<meta name="viewport" content="width=device-width, initial-sacle=0.5, maximum-scale=1, minimum-scale=1,user-scalable=no">
