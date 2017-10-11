@@ -19,3 +19,13 @@
 
 6. 响应式开发meta标签中的Viewport
 	<meta name="viewport" content="width=device-width, initial-sacle=0.5, maximum-scale=1, minimum-scale=1,user-scalable=no">
+
+7. 单位
+	px 显示屏幕分辨率的长度单位，大小无法跟随屏幕放大缩小
+	em 当前文本内的字体尺寸 1em = 16px(但不完全是) 会继承父级元素的字体大小，适合手机端开发
+	rem与em类似，相对于HTML根节点的字体单位，继承根元素的字体大小{font-size:62.5%},不用考虑兼容问题
+
+8. 字体图标特点（在fonts文件夹）
+	体积小便于加载
+	无需重复设计
+	方便应用
