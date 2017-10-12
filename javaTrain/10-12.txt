@@ -1,0 +1,24 @@
+59. css3扩增选择器
+	E~F选中子元素F之后的所有元素
+	伪类选择器：
+	nth-child(参数)
+		nth-child(2n-1)选中奇数
+		nth-child(3)选中第3个
+	only-of-type选中同级中只有一个对应子元素的元素:
+	only-child选中同级中只有一个子元素的元素:
+	not(选择器)相当于“非”的	操作，常见于表:
+		not(:nth-child(3))和其他的选择器搭配
+	empty选中内容为空的元素，这里指的不是value
+	nth-last-child(参数)；选中最后的元素
+
+60. rgba(r,g,b,a)，凡是颜色，都能被rgba代替
+
+61. 动画 transition: all 5s(执行时间) ease(动画的样式) 2s(几秒之后开始)
+
+62. transform: 2D过渡
+
+63. js基本数据类型undifined、null、boolean、number、String
+	弱类型的语言，变量类型由变量的值来决定
+	字面量和对象比的是值
+	对象和对象比的是地址
+ 
