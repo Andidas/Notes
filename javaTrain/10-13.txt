@@ -10,4 +10,16 @@
 		__________
 		|   |    |
 
-65. 
+65. js对象通过prototype添加类的对象和方法
+
+66. json:(javascript object notation)
+	var jsonOBj={
+	    "name":"lwy"
+	    "hobby":["swim","LOL",""吃鸡"]
+	    "friend":{
+	    	"sex":"lady"
+	    }
+	}
+
+67. js，无服务器解决乱码:
+	用encodeURI(encodeURI(str))，和decodeURI(unescape(str))
