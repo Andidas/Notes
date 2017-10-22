@@ -20,3 +20,4 @@
 3. transactin事务
 	hibernate对数据的操作都是封装在事务当中，并且默认是非自动提交的方式。所以用session保存对象的时候，如果不开启事务，并且提交事务，对象并不会真正保存在数据库中。
 	如果想让hibernate像jdbc那样自动提交事务，必须调用session对象dowork()方法，获得jdbc的connectin后，设置其为自动提交事务模式。（不推荐）
+
