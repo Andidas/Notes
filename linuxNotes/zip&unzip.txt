@@ -1,11 +1,11 @@
-.tar.gz ¸ñÊ½½âÑ¹Îª tar -zxvf xx.tar.gz 
-			tar -zxvf xx.tar.gz -C /bin	½âÑ¹µ½binÄ¿Â¼
-.tar.bz2 ¸ñÊ½½âÑ¹Îª tar -jxvf xx.tar.bz2
-.tar.xzµÄ½âÑ¹·½·¨£º 
+ï»¿.tar.gz æ ¼å¼è§£å‹ä¸º tar -zxvf xx.tar.gz 
+			tar -zxvf xx.tar.gz -C /bin	è§£å‹åˆ°binç›®å½•
+.tar.bz2 æ ¼å¼è§£å‹ä¸º tar -jxvf xx.tar.bz2
+.tar.xzçš„è§£å‹æ–¹æ³•ï¼š 
 	xz -d mpfr-3.1.2.tar.xz 	
-	»á²úÉúÒ»¸ömpfr-3.1.2.tar ÎÄ¼ş£¬ÔÙÖ´ĞĞ 
+	ä¼šäº§ç”Ÿä¸€ä¸ªmpfr-3.1.2.tar æ–‡ä»¶ï¼Œå†æ‰§è¡Œ 
 	tar -xvf mpfr-3.1.2.tar
-.tar.lzµÄ½âÑ¹·½·¨£ºlzip -d file.lz 
-	ÏÂÔØ£º http://www.nongnu.org/lzip/ 
+.tar.lzçš„è§£å‹æ–¹æ³•ï¼šlzip -d file.lz 
+	ä¸‹è½½ï¼š http://www.nongnu.org/lzip/ 
 	       http://download.savannah.gnu.org/releases/lzip/
 

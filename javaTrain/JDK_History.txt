@@ -1,0 +1,25 @@
+1990，Oak，詹姆斯.高斯林(James Gosling)等人开发，最初命名为Oak(橡树)
+1995.5.23，Oak改名为Java，发布java1.0，提出了"Write Once,Run Anywhere"的口号
+1996.1.23，JDK1.0, 包括java虚拟机，Applet，AWT等
+1997.2.19，JDK1.1, 包括(JAR文件格式，JDBC，javaBeans，RMI，内部类，反射)
+1998.12.4，JDK1.2(J2SE,J2EE,J2ME), 包括(EJB,Java,Plug-in,java IDL,Swing,strictfp关键字,一系列Collections集合类等)
+1999.4.27,HotSpot虚拟机发布,成为JDK1.3之后的默认虚拟机
+2000.5.8，JDK1.3, 代号Kestrel(美洲红隼), 包括(java2D API, javaSound类库等)
+#
+#自从JDK 1.3开始，Sun维持了一个习惯：大约每隔两年发布一个JDK的主版本，以动物命名
+#期间发布的各个修正版本则以昆虫作为工程名称。
+#比如: JDK1.3.1, 代号Ladybird(瓢虫)
+#
+2002.9.16，JDK1.4, 代号Merlin(灰背隼), 走向成熟的一个版本, 包括(正则表达式,异常链,NIO, 日志类, XML解析器,XSLT转换器等)
+2004.9.30, JDK1.5, 代号Tiger(老虎), 包括(自动装箱, 泛型, 动态注解, 枚举, 可变长,参数, foreach等语法, 改进了java内存模型Java Memory Model=JMM, 提供了java.util.concurrent并发包)
+2006.12.11, JDK1.6, 代号Mustang(野马), 包括(提供动态语言支持<通过内置Mozilla java Rhino引擎实现>、提供编译API和微软HTTP服务器API等,在jvm做了大量改进，如:锁、同步、垃圾收集、类加载), 命名从J2EE变为Java SE 6、Java EE 6、Java ME 6.
+#
+#2006.11.13，javaOne大会上，Sun宣布最终将java开源
+#
+2009.2.19, JDK1.7, 代号Dolphin(海豚), 完成了第一个里程碑(一共10个里程碑)
+#
+#2009.4.20, Oracle以74亿美元收购Sun（Java语言本身并不属于哪间公司所有，它由JCP组织进行管理，尽管JCP主要是由Sun公司或者说Oracle公司所领导的）
+#
+2011.7.28, JDK1.7, Oracle发布Java SE 1.7
+2014.3.18, JDK1.8, Oracle发布Java SE 1.8
+2017.9.21, JDK1.9, 
