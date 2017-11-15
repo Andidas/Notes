@@ -1,0 +1,116 @@
+-----------------------------question---------------------------------
+1. 不是jsp页面指令属性的选项是？
+     A.language  B.session  C.buffer   D.prefix
+
+2. “include”的指令作用是把JSP程序、HTML网页或其它的什么嵌入到当前的JSP网页中？
+     A.可执行程序 B.文本文件 C.C语言代码 D.ASP代码
+
+3. 选择中不是动作元素的是？
+     A. <jsp:param> B. <jsp:include> C. <jsp:forward> D. <jsp:language>
+
+4  在JSP中，要定义一个方法，需要用到（）元素
+     A. <%=  %> B. <%   %> C. <%!  %> D. <%@  %>
+
+5. 在JSP中，只有一行代码：<%=’A’+’B’%>，运行将输出（）
+     A．A+B  B. AB   C．131	D．错误信息，因为表达式是错误的
+
+6. JSP EL表达式：${(10*10) ne 100}的值是（）
+     A.0  B.TRUE C.FALSE  D.1
+
+7. 哪些内置对象可以访问某个特定作用域中的共享变量？(多选)
+     A.page B.request C.response D.session
+
+8. Filter的配置信息可以包含的XML节点有？(多选)
+     A.filter-name B.jsp-file C.url-pattern D.dispatcher
+
+9. 关于文件上传，下列说法正确的有：(多选)
+	A、表单的enctype属性的取值必须是"multipart/form-data"
+	B、需要使用POST方式提交
+	C、表单的action属性中不能使用URL重写(?arg=value&arg1=value1)形式传递参数	     D、请求中的Content-Length包含的是请求体的总长度，而不是上传文件的大小
+
+10. 数据库事务具备四大特性 1___,2___,3___,4___
+
+
+
+
+
+
+
+
+
+
+-----------------------------answer---------------------------------
+1.jsp 的page指令属性有：
+    1)language,设置使用的语言。
+    2)extends,设置jsp页面继承的类，jsp在执行之前都会被服务器解析成Servlet类，该属性不常用，可能影响服务器的性能优化。
+    3)import，设置jsp导入的类包。
+    4)pageEncoding，知道那个页面编码格式。
+    5)contentType，设置页面的MIME类型和编码。
+    6)session，指定页面是否使用HTTP的session回话对象，默认true。
+    7)buffer，设置页面out输出对象的缓冲区大小，默认为8KB，单位只能使用KB，建议使用8的倍数作为属性值。
+    8)autoFlush，设置页面缓存满时，是否自动刷新缓存，默认为true，如果设置成false，则缓存满时会抛出异常。
+    9)isErrorPage，将当前页面设置成错误处理页面来处理另一个JSP页面的错误，也就是作为异常处理页面。
+    10)errorPage,设置当前页面的异常处理页面，对应的异常处理页面isErrorPage必须设置为true，如果设置该属性，那么在web.xml文件中定义的任何错误处理页面都将被忽略，优先使用该属性定义的异常处理页面。
+    11)info,定义一个可以在servlet中通过getServletInfo方法获取的字符串。
+    12)isELIgnored, 是否忽略表达式语言EL。
+    13)isThreadSafe，控制由jsp页面生成的servlet是允许并行访问(default)，还是同一时间不允许多个请求访问单个servlet实例
+
+2.静态导入和动态导入的区别：
+    1）静态导入（include指令）通过file属性指定被包含的文件，并且file属性不支持任何表达式；动态导入（include动作）通过page属性指定被包含的文件，且page属性支持JSP表达式；
+    2）使用静态导入（include指令）时，被包含的文件内容会原封不动的插入到包含页中，然后JSP编译器再将合成后的文件最终编译成一个Java文件；使用动态导入（include动作）包含文件时，当该标识被执行时，程序会将请求转发（不是请求重定向）到被包含的页面，并将执行结果输出到浏览器中，然后返回包含页继续执行后面的代码。因为服务器执行的是多个文件，所以JSP编译器会分别对这些文件进行编译；
+    3）使用include指令包含文件时，由于被包含的文件最终会生成一个文件，所以在被包含、包含文件中不能有重名的变量或方法；而include动作包含文件时，由于每个文件是单独编译的，所以在被包含文件和包含文件中重名的变量和方法是不相冲突的。
+    4）静态导入是将被导入页面的代码完全融入，两个页面融合成一个整体Servlet，因此被导入页面甚至不需要是一个完整的页面；而动态导入则在Servlet中使用include方法来引入被导入页面的内容；
+    5）静态导入时被导入页面的编译指令会起作用；而动态导入时被导入页面的编译指令则失去作用，只是插入被导入页面的body内容。
+
+3. 七大动作，三大指令
+     指令：page，include，taglib
+     动作：<jsp:include>
+     	   <jsp:useBean>
+	   <jsp:getProperty>
+	   <jsp:setProperty>
+	   <jsp:param>传递参数
+	   <jsp:forward>跳转
+	   <jsp:plugin>用于指定客户端运行的插件
+   九大内置对象：
+     	out -> PrintWrite 输出对象
+     	request -> HttpServletRequest/ServletRequest 请求对象
+	response -> HttpServletResponse/ServletResponse 响应对象
+     	config -> ServletConfig 配置对象
+     	application -> ServletContext 应用程序对象 
+     	session -> HttpSession 会话对象
+     	pageContext -> PageContext 页面上下文对象
+     	exception -> Throwable 例外对象
+     	page -> this 页面对象
+
+6. EL中的变量搜索范围是>
+	page request session application, 在EL中的名称:PageScope RequestScope SessionScope ApplicationScope
+   与输入有关的隐含对象>
+   	&{param.name}
+	&{paramValues.name}
+   条件标签>
+  	算术运算符有五个：+、-、*或$、/或div、%或mod
+  	关系运算符有六个：==或eq、!=或ne、<或lt、>或gt、<=或le、>=或ge
+ 	逻辑运算符有三个：&&或and、||或or、!或not
+ 	其它运算符有三个：Empty运算符、条件运算符、()运算符
+
+8. filter
+     servlet-2.4中Filter默认下只拦截外部提交的请求，forward和include这些内部转发都不会被过滤但是有时候我们需要forward的时候也用到Filter，这样就需要如下配置:
+     	<filter>   
+  		......
+	</filter>
+	<filter-mapping> 
+ 		......
+	   	<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	    	<dispatcher>INCLUDE</dispatcher>
+	    	<dispatcher>EXCEPTION</dispatcher>
+	</filter-mapping>
+
+
+答案:D B D C C C BD ACD ABD 原子性，一致性，隔离性，持久性
+
+
+
+
+
+
