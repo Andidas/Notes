@@ -34,9 +34,19 @@
 8. 使用请求头中的Referer属性可以获取上一次请求的资源地址，但是不能获取其中的URL重写参数信息（ ）判断题
 
 ---------------------------------answer-----------------------------------------------
+1. servlet是接口，HttpServlet是类，HttpServlet implements Servlet
+   五个方法
+        public void init(ServletConfig config) throws ServletException
+        public void service(ServletRequest req,ServletResponse res) throws ServletException,java.io.IOException
+        public void destroy()
+        public ServletConfig getServletConfig()
+        public java.lang.String getServletInfo()
 
-
-
+3. pageScope、requestScope、sessionScope 和applicationScope。
+   它们基本上就和JSP的pageContext、request、session和application一样。
+   与输入有关的隐含对象有两个：param和paramValues。
+   其他隐含对象：cookie， header和headerValues， initParam， pageContext
+   详细：http://blog.csdn.net/pkrosea/article/details/1756793
 
 
 
