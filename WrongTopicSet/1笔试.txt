@@ -81,7 +81,9 @@
      	pageContext -> PageContext 页面上下文对象
      	exception -> Throwable 例外对象
      	page -> this 页面对象
-
+  Servlet的四大域对象分别是：
+  	HttpServletResponse,HttpSession,ServletContext,pageContext
+	
 6. EL中的变量搜索范围是>
 	page request session application, 在EL中的名称:PageScope RequestScope SessionScope ApplicationScope
    与输入有关的隐含对象>
@@ -108,7 +110,6 @@
 
 
 答案:D B D C C C BD ACD ABD 原子性，一致性，隔离性，持久性
-
 
 
 
