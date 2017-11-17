@@ -1,0 +1,43 @@
+---------------------------------question-----------------------------------------------
+1. 每个Servlet都必须实现()接口
+    A、 javax.servlet.Servlet
+    B、 javax.servlet.HttpServlet
+    C、 javax.servlet.GenericServlet
+    D、 javax.servlet.http.Servlet
+    
+2. JSP标准标签库（JSTL）的标签库描述符文件的后缀是（）
+    A、tld B、properties C、xml	D、jar
+     
+3. 哪一个不是EL定义的隐式对象？（ ）
+    A、cookie B、pageContext C、attributes D、initParam
+
+4. 关于JSP和SERVLET的描述正确的是？( )多选
+    A、JSP技术构建在SERVLET上，它是支持HTML和XML页面制作的SERVLET技术的扩展						
+    B、JSP能够访问Java API，具备SERVLET的全部功能
+    C、访问JSP页面，需要预编译成SERVLET					        
+    D、JSP页面只能在接受请求时动态编译成SERVLET引入也会
+
+5. 下列SELECT 语句中，哪些子句不能包含子查询()多选
+    A、 select B、 group by C、 where D、 order by
+
+6. 关于文件上传，下列说法正确的有：()多选
+   A、表单的enctype属性的取值必须是"multipart/form-data"
+   B、需要使用POST方式提交
+   C、在Servlet中只可以限制单个上传文件的大小
+   D、上传文件不需要设置编码格式
+   E、表单的action属性中不能使用URL重写(?arg=value&arg1=value1)形式传递参数				
+   F、请求中的Content-Length包含的是请求体的总长度，而不是上传文件的大小
+   
+7. 以下哪些表达式是JSTL表达式（）多选
+   A、 ${name} B、 <c:forEach></c:forEach> C、 <%=name%> D、 <c:if></c:if>
+
+8. 使用请求头中的Referer属性可以获取上一次请求的资源地址，但是不能获取其中的URL重写参数信息（ ）判断题
+
+---------------------------------answer-----------------------------------------------
+
+
+
+
+
+
+
