@@ -66,3 +66,11 @@ mount就是挂载命令了。
 rpm -qa 按照完整名查询
 pm -qa http 不能查到 httpd
 rpm -qa | grep 把查询到的东西交给 grep 过滤，可以模糊查询
+
+15. 设置终端快捷键
+	: /usr/bin/gnome-termimal
+
+
+
+
+
