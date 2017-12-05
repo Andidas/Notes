@@ -1,0 +1,46 @@
+1. 拦截器和过滤器区别
+	>>过滤器先执行，拦截器后执行，
+	>>过滤器和拦截器使用的是不同的设计模式，过滤器使用责任链，拦截器使用的是AOP切面编程，核心是动态代理，也就是代理模式。
+	>>过滤器是用同一套代码，拦截器使用不同的代码，拦截前执行一套，拦截后又执行一套。
+
+2. Ajax的get和post区别
+	>>get传送的数据量较小，不能大于2KB；post传送的数据量较大，一般被默认不受限制。但理论上，因服务器的不同而异。
+	>>get安全性非常低，post安全性较高。
+	>>对于get方式，服务器端用Request.QueryString获取变量的值，对于post方式，服务器端用Request.Form获取提交的数据。两种方式的参数都可以用Request来获得。
+	>>get是把参数数据队列加到提交表单的ACTION属性所指的URL中，值和表单内各个字段一一对应，在URL中可以看到。post是通过HTTP post机制，将表单内各个字段与其内容放置在HTML HEADER内一起传送到ACTION属性所指的URL地址，用户看不到这个过程。简单说就是：get在报文头，post在报文体。
+	>><form method="get" action="a.asp?b=b">跟<form method="get" action="a.asp">是一样的，也就是说，method为get时action页面后边带的参数列表会被忽视；而<form method="post" action="a.asp?b=b">跟<form method="post" action="a.asp">是不一样的。
+	eg：看个例子~ http://localhost?username=张三
+	GET /?username=%E5%BC%A0%E4%B8%89 HTTP/1.1
+	Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/vnd.ms-powerpoint, application/vnd.ms-excel, application/msword, */*
+	Accept-Language: zh-cn
+	Accept-Encoding: gzip, deflate
+	User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0; .NET CLR 1.1.4322)
+	Host: localhost
+	Connection: Keep-Alive
+
+	POST / HTTP/1.1
+	Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/vnd.ms-powerpoint, application/vnd.ms-excel, application/msword, */*
+	Accept-Language: zh-cn
+	Content-Type: application/x-www-form-urlencoded
+	Accept-Encoding: gzip, deflate
+	User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0; .NET CLR 1.1.4322)
+	Host: localhost
+	Content-Length: 28
+	Connection: Keep-Alive
+	username=%E5%BC%A0%E4%B8%89
+
+3. SQL注入原理和预防
+	>>原理:
+	1>寻找到SQL注入的位置，
+	2>判断服务器类型和后台数据库类型
+	3>针对不同的服务器和数据库特点进行SQL注入攻击
+	>>预防
+	1.（简单又有效的方法）PreparedStatement
+	2.使用正则表达式过滤传入的参数
+	3.字符串过滤
+	4.jsp中调用该函数检查是否包函非法字符
+	5.JSP页面判断代码：
+	总的说来，防范一般的SQL注入只要在代码规范上下点功夫就可以了
+	凡涉及到执行的SQL中有变量时，用JDBC（或者其他数据持久层）提供的如：PreparedStatement就可以 ，切记不要用拼接字符串的方法就可以了。
+	
+
