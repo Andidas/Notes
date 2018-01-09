@@ -1,0 +1,27 @@
+We have to create only the src directory. (Because I am working on Windows, here is the win-syntax - translate to your shell):
+
+# in Win
+md src
+# in Linux
+mkdir src
+The following simple Java class just prints a fixed message out to STDOUT, so just write this code into srcoataHelloWorld.java.
+
+package oata;
+
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}
+Now just try to compile and run that:
+
+# in Win
+md build\classes
+# in Linux
+mkdir -p ./build/classes
+
+javac -sourcepath src -d build\classes src\oata\HelloWorld.java
+java -cp build\classes oata.HelloWorld
+which will result in
+
+Hello World
