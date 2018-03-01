@@ -1,0 +1,32 @@
+lang属性的取值应该遵循 BCP 47 - Tags for Identifying Languages。
+
+单一的 zh 和 zh-CN 均属于废弃用法。
+
+问题主要在于，zh 现在不是语言code了，而是macrolang，能作为语言code的是cmn（国语）、yue（粤语）、wuu（吴语）等。我通常建议写成 zh-cmn 而不是光写 cmn，主要是考虑兼容性（至少可匹配 zh），有不少软件和框架还没有据此更新。
+
+
+
+zh-CN 的问题还在于，其实多数情况下标记的是简体中文，但是不恰当的使用了地区，这导致同样用简体中文的 zh-SG（新加坡）等无法匹配。更典型的是 zh-TW 和 zh-HK。所以其实应该使用 zh-Hans / zh-Hant 来表示简体和繁体。那么完整的写法就是 zh-cmn-Hans，表示简体中文书写的普通话/国语。一般而言没有必要加地区代码，除非要表示地区特异性，一般是词汇不一样（比如维基百科的大陆简体和新马简体）。
+
+所以回答题主，两种都不对。
+
+如何标记的例子：
+
+1. 简体中文页面：html lang=zh-cmn-Hans
+2. 繁体中文页面：html lang=zh-cmn-Hant
+3. 英语页面：html lang=en
+
+4. 《回来》的音频，以国语演唱：audio lang=zh-cmn
+5. 《海阔天空》的音频，以粤语演唱：audio lang=yue
+6. 《进来白相相》的音频，以沪语演唱：audio lang=wuu注意上述因为都是音频，所以不应加上 Hans/Hant 标记
+
+7. 《最终信仰》的音频，双语演唱，因此audio不需要标记lang（如果一定需要标记可以用 lang=mul），但是每个段落的歌词可以分别用 p lang=en 和 p lang=zh-cmn 标记（根据简体或是繁体可用 zh-cmn-Hans 或 zh-cmn-Hant）
+
+8. 《忐忑》的音频，没有歌词，因此不需要标记lang（如果一定需要标记可用 audio lang=zxx）。需要加地区代码的情况一般比较少，除非为了强调不同地区汉语使用差异。比如：<p lang="zh-cmn-Hans"><b lang="zh-cmn-Hans-CN">菠萝</b>和<b lang="zh-cmn-Hant-TW">鳳梨</b>其实是同一种水果。只是大陆和台湾称谓不同，且新马一带的称谓也是不同的，称之为<b lang="zh-cmn-Hans-SG">黄梨</b>。</p>
+
+
+
+当然，由于历史原因，有时候不得不继续使用zh-CN。比如中文维基百科，沿用了传统的zh-CN/zh-HK/zh-SG/zh-TW（按照标准应该使用 zh-cmn-Hans-CN、zh-cmn-Hant-HK、zh-cmn-Hans-SG、zh-cmn-Hant-TW）。这时候，合理的软件行为，是将 zh-CN 等转化为 zh-cmn-Hans（即转化为最常见的误用所对应的实际标准写法）。
+
+实际上，各相关标准，也存在一定的滞后。例如CSS的:lang选择器，不支持选择仅仅简体/繁体中文（而不管是cmn或是yue或是min等汉语方言）。理想情况是CSS3对:lang选择器的语法进行升级，即BCP 47中的高级匹配算法，支持 :lang(*-Hans)这样的写法。
+
